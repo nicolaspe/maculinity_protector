@@ -4,11 +4,39 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style_masc.css">
     <title>Masculinity Protector</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+    <script>
+      $(document).ready(function(){
+        $("#next").click(function(){
+          $("#intro").hide();
+          $("#music").show();
+        });
+      });
+    </script>
   </head>
 
   <body>
-    <header>
-      <h1>Masculinity Protector</h1>
+    <header id="intro">
+        <h1>Masculinity Protector</h1>
+        <p>Today's judgmental world is not for everyone, so I created this page to protect men while they hear sensitive content, without being attacked for it. We have the right, we only need to protect ourselves.</p>
+        <img src="mascsymbol.png" alt="masculinityLogo" height="100px">
+        <p>In order to protect yourself, you only need to click on the symbol of masculine strength to hide or show the playlist. Whenever the playlist is hidden, the page will display an array of super-manly pictures. (On future updates, you will be able to choose a theme for the pictures to be displayed. Keep tuned!)</p>
+        <button type="button" id="next">Continue</button>
     </header>
+    <menu>
+
+    </menu>
+    <div class="playlist">
+      <iframe id="music" style="display: none;" width="300" height="169" src="https://www.youtube.com/embed/videoseries?list=PL8kXYg7pxIOdq7e0neDDS7fhNsYkXrym4" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="images">
+    </div>
+
+    <footer>
+      <a href="http://nicolaspe.github.com">Home</a>
+      <a href="#" onclick="history.go(-1)">Back</a>
+    </footer>
   </body>
 </html>

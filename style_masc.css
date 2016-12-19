@@ -1,4 +1,67 @@
 hmtl {
+}
+
+* {
+  box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    /*float: left;*/
+    padding: 15px;
+}
+
+body {
   background: black;
   color: white;
+  text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  border: 10px;
+  vertical-align: middle;
+  line-height: 125%;
 }
+
+h1 {
+  font-variant-caps: small-caps;
+  font-family: Georgia;
+}
+a {
+  color: pink;
+  text-decoration: none;
+}
+
+header {
+  background: #f0f0f0;
+  color: #0f0f0f;
+  min-width: 160px;
+  max-width: 80%;
+  box-shadow: 0px 8px 8px 0px rgba(255,255,255, 0.5);
+  padding: 5% 5% 5% 5%;
+  margin-top: 5%;
+  margin-right: auto;
+  margin-left: auto;
+}
+footer {
+  display: none;
+}
+button#music {
+  font-family: inherit;
+  padding: 5px 5px 5px 5px;
+}
+
+/*@media only screen and (min-width: 830px) {
+    /* For desktop: */
+    .col-1 {width: 10%;}
+    .col-2 {width: 20%;}
+    .col-3 {width: 30%;}
+    .col-4 {width: 40%;}
+    .col-5 {width: 50%;}
+    .col-6 {width: 60%;}
+    .col-7 {width: 70%;}
+    .col-8 {width: 80%;}
+    .col-9 {width: 90%;}
+    .col-0 {width: 100%;}
+}*/
