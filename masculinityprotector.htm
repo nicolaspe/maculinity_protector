@@ -11,6 +11,15 @@
         $("#next").click(function(){
           $("#intro").hide();
           $("#music").show();
+          $("#MANu").show();
+        });
+        $("#protect").click(function(){
+          var x = document.getElementById("music");
+          if (x.style.display == 'none') {
+            $("#music").show();
+          } else {
+            $("#music").hide();
+          }
         });
       });
     </script>
@@ -21,12 +30,22 @@
         <h1>Masculinity Protector</h1>
         <p>Today's judgmental world is not for everyone, so I created this page to protect men while they hear sensitive content, without being attacked for it. We have the right, we only need to protect ourselves.</p>
         <img src="mascsymbol.png" alt="masculinityLogo" height="100px">
-        <p>In order to protect yourself, you only need to click on the symbol of masculine strength to hide or show the playlist. Whenever the playlist is hidden, the page will display an array of super-manly pictures. (On future updates, you will be able to choose a theme for the pictures to be displayed. Keep tuned!)</p>
+        <p>In order to protect yourself, you only need to click on the symbol of masculine strength to hide or show the playlist (and access other functions too). On the background, the page will display an array of super-manly pictures. (On future updates, you will be able to choose a theme for the pictures to be displayed. Keep tuned!)</p>
         <button type="button" id="next">Continue</button>
     </header>
-    <menu>
+
+    <menu id="MANu" style="display: none; float: left;">
+      <table>
+        <tr>
+          <td><button type="button" class="menuItem" id="protect"><img src="mascsymbol.png" alt="masculinityLogo" height="50px"></button></td>
+          <!-- <td><button type="button" class="menuItem fullMenu" id="intro">Show Intro</td> -->
+          <td><a href="http://nicolaspe.github.io" class="fullMenu">Home</a></td>
+          <td><a href="#" onclick="history.go(-1)" class="fullMenu">Back</a></td>
+        </tr>
+      </table>
 
     </menu>
+
     <div class="playlist">
       <iframe id="music" style="display: none;" width="300" height="169" src="https://www.youtube.com/embed/videoseries?list=PL8kXYg7pxIOdq7e0neDDS7fhNsYkXrym4" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -34,9 +53,5 @@
     <div class="images">
     </div>
 
-    <footer>
-      <a href="http://nicolaspe.github.com">Home</a>
-      <a href="#" onclick="history.go(-1)">Back</a>
-    </footer>
   </body>
 </html>

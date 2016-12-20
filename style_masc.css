@@ -29,8 +29,17 @@ h1 {
   font-family: Georgia;
 }
 a {
-  color: pink;
+  color: #f0f0f0;
   text-decoration: none;
+}
+a:hover {
+  color: #f15f5f;
+}
+table {
+  border: none;
+}
+td tr {
+  vertical-align: middle;
 }
 
 header {
@@ -44,12 +53,26 @@ header {
   margin-right: auto;
   margin-left: auto;
 }
-footer {
+.fullMenu {
   display: none;
+  padding: 0px 0px 0px 15px;
 }
-button#music {
-  font-family: inherit;
-  padding: 5px 5px 5px 5px;
+menu {
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  font-weight: lighter;
+  width: 100%;
+}
+menu:hover .fullMenu{
+  display: inline-block;
+}
+
+.menuItem {
+  background: #000000;
+  border: none;
+  color: #f0f0f0;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 10px 0px 0px;
 }
 
 /*@media only screen and (min-width: 830px) {
