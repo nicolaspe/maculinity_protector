@@ -1,6 +1,6 @@
-hmtl {
+html {
+  background: black;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -15,7 +15,10 @@ hmtl {
 }
 
 body {
-  background: black;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   color: white;
   text-align: center;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -23,6 +26,18 @@ body {
   vertical-align: middle;
   line-height: 125%;
 }
+
+/* ===== BACKGROUND AND Z-INDEX ===== */
+/*canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+}*/
 
 h1 {
   font-variant-caps: small-caps;
@@ -74,6 +89,7 @@ menu:hover .fullMenu{
   padding: 0px 0px 0px 0px;
   margin: 0px 10px 0px 0px;
 }
+
 
 /*@media only screen and (min-width: 830px) {
     /* For desktop: */

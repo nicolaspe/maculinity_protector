@@ -5,54 +5,87 @@
     <link rel="stylesheet" href="style_masc.css">
     <title>Masculinity Protector</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-    <script>
-      $(document).ready(function(){
-        $("#next").click(function(){
-          $("#intro").hide();
-          $("#music").show();
-          $("#MANu").show();
-        });
-        $("#protect").click(function(){
-          var x = document.getElementById("music");
-          if (x.style.display == 'none') {
-            $("#music").show();
-          } else {
-            $("#music").hide();
-          }
-        });
-      });
-    </script>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+    <script src="masculinebackground.js" type="text/javascript"></script>
+
+    <!-- <script language="JavaScript1.2">
+      // background images
+      var bgimgs = new Array();
+      bgimgs[0] = /images/epic001.jpg;
+      bgimgs[1] = /images/epic002.jpg;
+      bgimgs[2] = /images/epic003.jpg;
+      bgimgs[3] = /images/epic004.jpg;
+      // time interval
+      var speed = 2000;
+      // preload
+      var pathToImg = new Array();
+      for(i=0; i<bgimgs.length; i++){
+        pathToImg[i] = new Image();
+        pathToImg[i].src = bgimgs[i];
+      }
+      var inc = -1;
+
+      function slideback(){
+        if(inc < bgimgs.length-1) inc++;
+        else inc=0;
+        document.body.background=pathToImg[inc].src;
+      }
+      if(document.all || document.getElementById){
+        window.onload=new Function('setInterval("bgSlide()",3000)');
+      }
+    </script> -->
+
   </head>
 
   <body>
-    <header id="intro">
+    <header id="intro" class="content">
         <h1>Masculinity Protector</h1>
         <p>Today's judgmental world is not for everyone, so I created this page to protect men while they hear sensitive content, without being attacked for it. We have the right, we only need to protect ourselves.</p>
         <img src="mascsymbol.png" alt="masculinityLogo" height="100px">
         <p>In order to protect yourself, you only need to click on the symbol of masculine strength to hide or show the playlist (and access other functions too). On the background, the page will display an array of super-manly pictures. (On future updates, you will be able to choose a theme for the pictures to be displayed. Keep tuned!)</p>
-        <button type="button" id="next">Continue</button>
+        <button id="next" onclick="goToMain()">Continue</button>
     </header>
 
-    <menu id="MANu" style="display: none; float: left;">
+    <menu id="MANu" style="display: none; float: left;" class="content">
       <table>
         <tr>
-          <td><button type="button" class="menuItem" id="protect"><img src="mascsymbol.png" alt="masculinityLogo" height="50px"></button></td>
+          <td><button type="button" class="menuItem" id="protect" onclick="protect()"><img src="mascsymbol.png" alt="masculinityLogo" height="50px"></button></td>
           <!-- <td><button type="button" class="menuItem fullMenu" id="intro">Show Intro</td> -->
           <td><a href="http://nicolaspe.github.io" class="fullMenu">Home</a></td>
           <td><a href="#" onclick="history.go(-1)" class="fullMenu">Back</a></td>
         </tr>
       </table>
-
     </menu>
 
-    <div class="playlist">
-      <!-- <iframe id="music" style="display: none;" width="300" height="169" src="https://www.youtube.com/embed/videoseries?list=PL8kXYg7pxIOdq7e0neDDS7fhNsYkXrym4" frameborder="0" allowfullscreen></iframe> -->
+    <div class="playlist content">
       <iframe id="music" style="display: none;" src="https://embed.spotify.com/?uri=spotify%3Auser%3Anicostrat%3Aplaylist%3A5a3v15H9IECm8Mpfraf4RS" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
     </div>
 
     <div class="images">
     </div>
+
+    <!-- ===== FUNCTIONS =====  -->
+    <script>
+      function goToMain(){
+        // var intro = getElementById("intro");
+        // var manly = getElementById("MANu");
+        // var spotif = getElementById("music");
+        document.getElementById("intro").style.display = 'none';
+        document.getElementById("MANu").style.display = 'block';
+        document.getElementById("music").style.display = 'inline-block';
+      }
+
+      function protect(){
+        var spotif = document.getElementById("music");
+        if(spotif.style.display == 'none'){
+          spotif.style.display = 'inline-block';
+        } else {
+          spotif.style.display = 'none';
+        }
+      }
+    </script>
 
   </body>
 </html>
