@@ -36,7 +36,6 @@
         window.onload=new Function('setInterval("bgSlide()",3000)');
       }
     </script> -->
-
   </head>
 
   <body>
@@ -51,7 +50,7 @@
     <menu id="MANu" style="display: none; float: left;" class="content">
       <table>
         <tr>
-          <td><button type="button" class="menuItem" id="protect" onclick="protect()"><img src="mascsymbol.png" alt="masculinityLogo" height="50px"></button></td>
+          <td><button type="button" class="menuItem content" id="protect" onclick="protect()"><img src="mascsymbol.png" alt="masculinityLogo" height="50px"></button></td>
           <!-- <td><button type="button" class="menuItem fullMenu" id="intro">Show Intro</td> -->
           <td><a href="http://nicolaspe.github.io" class="fullMenu">Home</a></td>
           <td><a href="#" onclick="history.go(-1)" class="fullMenu">Back</a></td>
@@ -60,29 +59,46 @@
     </menu>
 
     <div class="playlist content">
-      <iframe id="music" style="display: none;" src="https://embed.spotify.com/?uri=spotify%3Auser%3Anicostrat%3Aplaylist%3A5a3v15H9IECm8Mpfraf4RS" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-    </div>
-
-    <div class="images">
+      <iframe id="music" style="display: none;" src="https://embed.spotify.com/?uri=spotify%3Auser%3Anicostrat%3Aplaylist%3A5a3v15H9IECm8Mpfraf4RS" width="300" height="500" frameborder="0" allowtransparency="true"></iframe>
     </div>
 
     <!-- ===== FUNCTIONS =====  -->
     <script>
+      var bod = document.body;
+      var slideIndex = 0;
+
+      function showBackground(n){
+        switch (n) {
+          case 0:
+            bod.background = "images/epic001.jpg";
+            break;
+          case 1:
+            bod.background = "images/epic002.jpg";
+            break;
+          case 2:
+            bod.background = "images/epic003.jpg";
+            break;
+          case 3:
+            bod.background = "images/epic004.jpg";
+            break;
+          default:
+            bod.background = "images/black.jpg";
+        }
+      }
+      function nextBg(){
+      }
       function goToMain(){
-        // var intro = getElementById("intro");
-        // var manly = getElementById("MANu");
-        // var spotif = getElementById("music");
         document.getElementById("intro").style.display = 'none';
         document.getElementById("MANu").style.display = 'block';
         document.getElementById("music").style.display = 'inline-block';
+        showBackground(3);
       }
-
       function protect(){
         var spotif = document.getElementById("music");
-        if(spotif.style.display == 'none'){
-          spotif.style.display = 'inline-block';
+        if(spotif.style.visibility == 'hidden'){
+          spotif.style.visibility = 'visible';
         } else {
-          spotif.style.display = 'none';
+          spotif.style.visibility = 'hidden';
         }
       }
     </script>

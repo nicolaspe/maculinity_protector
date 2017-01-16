@@ -25,10 +25,11 @@ body {
   border: 10px;
   vertical-align: middle;
   line-height: 125%;
+  /*height: 100%;*/
 }
 
 /* ===== BACKGROUND AND Z-INDEX ===== */
-/*canvas {
+/*#images {
   position: fixed;
   top: 0;
   left: 0;
@@ -57,7 +58,7 @@ td tr {
   vertical-align: middle;
 }
 
-header {
+header#intro {
   background: #f0f0f0;
   color: #0f0f0f;
   min-width: 160px;
@@ -68,9 +69,10 @@ header {
   margin-right: auto;
   margin-left: auto;
 }
+
 .fullMenu {
   display: none;
-  padding: 0px 0px 0px 15px;
+  padding: 5px;
 }
 menu {
   font-family: Arial, sans-serif;
@@ -80,18 +82,21 @@ menu {
 }
 menu:hover .fullMenu{
   display: inline-block;
+  background: rgba(0,0,0,0.1);
 }
-
 .menuItem {
-  background: #000000;
+  background: inherit;
   border: none;
   color: #f0f0f0;
   padding: 0px 0px 0px 0px;
   margin: 0px 10px 0px 0px;
 }
 
+#music {
+  /*height: 100%;*/
+}
 
-/*@media only screen and (min-width: 830px) {
+@media only screen and (min-width: 830px) {
     /* For desktop: */
     .col-1 {width: 10%;}
     .col-2 {width: 20%;}
@@ -103,4 +108,4 @@ menu:hover .fullMenu{
     .col-8 {width: 80%;}
     .col-9 {width: 90%;}
     .col-0 {width: 100%;}
-}*/
+}
