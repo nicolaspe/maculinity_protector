@@ -5,11 +5,6 @@
     <link rel="stylesheet" href="style_masc.css">
     <title>Masculinity Protector</title>
 
-    <script src="libraries/p5.js" type="text/javascript"></script>
-    <script src="libraries/p5.dom.js" type="text/javascript"></script>
-    <script src="libraries/p5.sound.js" type="text/javascript"></script>
-    <script src="masculinebackground.js" type="text/javascript"></script>
-
     <!-- <script language="JavaScript1.2">
       // background images
       var bgimgs = new Array();
@@ -64,10 +59,11 @@
 
     <!-- ===== FUNCTIONS =====  -->
     <script>
-      var bod = document.body;
-      var slideIndex = 0;
+      var slide = 0;
+      var time = 10*1000;
 
       function showBackground(n){
+        var bod = document.body;
         switch (n) {
           case 0:
             bod.background = "images/epic001.jpg";
@@ -86,12 +82,17 @@
         }
       }
       function nextBg(){
+        showBackground(slide);
+        console.log(slide);
+        slide++;
+        if(slide > 3){ slide = 0;}
+        // var t = setInterval(nextBg,time);
       }
       function goToMain(){
         document.getElementById("intro").style.display = 'none';
         document.getElementById("MANu").style.display = 'block';
         document.getElementById("music").style.display = 'inline-block';
-        showBackground(3);
+        var t = setInterval(nextBg,time);
       }
       function protect(){
         var spotif = document.getElementById("music");
