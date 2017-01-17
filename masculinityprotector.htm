@@ -4,33 +4,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style_masc.css">
     <title>Masculinity Protector</title>
-
-    <!-- <script language="JavaScript1.2">
-      // background images
-      var bgimgs = new Array();
-      bgimgs[0] = /images/epic001.jpg;
-      bgimgs[1] = /images/epic002.jpg;
-      bgimgs[2] = /images/epic003.jpg;
-      bgimgs[3] = /images/epic004.jpg;
-      // time interval
-      var speed = 2000;
-      // preload
-      var pathToImg = new Array();
-      for(i=0; i<bgimgs.length; i++){
-        pathToImg[i] = new Image();
-        pathToImg[i].src = bgimgs[i];
-      }
-      var inc = -1;
-
-      function slideback(){
-        if(inc < bgimgs.length-1) inc++;
-        else inc=0;
-        document.body.background=pathToImg[inc].src;
-      }
-      if(document.all || document.getElementById){
-        window.onload=new Function('setInterval("bgSlide()",3000)');
-      }
-    </script> -->
   </head>
 
   <body>
@@ -64,28 +37,50 @@
 
       function showBackground(n){
         var bod = document.body;
-        switch (n) {
-          case 0:
-            bod.background = "images/epic001.jpg";
-            break;
-          case 1:
-            bod.background = "images/epic002.jpg";
-            break;
-          case 2:
-            bod.background = "images/epic003.jpg";
-            break;
-          case 3:
-            bod.background = "images/epic004.jpg";
-            break;
-          default:
-            bod.background = "images/black.jpg";
+        if(n == 0){
+          bod.background = "images/epic001.jpg";
+        } else if(n == 1) {
+          bod.background = "images/epic002.jpg";
+        } else if(n == 2) {
+          bod.background = "images/epic003.jpg";
+        } else if(n == 3) {
+          bod.background = "images/epic004.jpg";
+        } else if(n == 4) {
+          bod.background = "images/epic005.jpg";
+        } else if(n == 5) {
+          bod.background = "images/epic006.jpg";
+        } else if(n == 6) {
+          bod.background = "images/epic007.jpg";
+        } else if(n == 7) {
+          bod.background = "images/epic008.jpg";
+        } else if(n == 8) {
+          bod.background = "images/c-astonmartin_vantage.jpg";
+        } else if(n == 9) {
+          bod.background = "images/c-corvette.jpg";
+        } else if(n == 10) {
+          bod.background = "images/c-lamborghini_centenario.jpg";
+        } else if(n == 11) {
+          bod.background = "images/c-lotus_elise.jpg";
+        } else if(n == 12) {
+          bod.background = "images/c-maserati_granturismo.jpg";
+        } else if(n == 13) {
+          bod.background = "images/c-mazda_rx8.jpg";
+        } else if(n == 14) {
+          bod.background = "images/c-mclaren.jpg";
+        } else if(n == 15) {
+          bod.background = "images/c-porsche_carrera.jpg";
+        } else if(n == 16) {
+          bod.background = "images/c-teslaroadster.jpg";
+        } else {
+          bod.background = "images/black.jpg";
         }
       }
       function nextBg(){
         showBackground(slide);
         console.log(slide);
-        slide++;
-        if(slide > 3){ slide = 0;}
+        slide = Math.floor(Math.random()*16 +1);
+        // slide++;
+        // if(slide > 8){ slide = 0;}
         // var t = setInterval(nextBg,time);
       }
       function goToMain(){
