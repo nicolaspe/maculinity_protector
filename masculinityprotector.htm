@@ -11,7 +11,7 @@
         <h1>Masculinity Protector</h1>
         <p>Today's judgmental world is not for everyone, so I created this page to protect men while they hear sensitive content, without being attacked for it. We have the right, we only need to protect ourselves.</p>
         <img src="mascsymbol.png" alt="masculinityLogo" height="100px">
-        <p>In order to protect yourself, you only need to click on the symbol of masculine strength to hide or show the playlist (and access other functions too). On the background, the page will display an array of super-manly pictures. (On future updates, you will be able to choose a theme for the pictures to be displayed. Keep tuned!)</p>
+        <p>In order to protect yourself, you only need to click on the <span style="font-weight:bold; font-variant:small-caps; font-size:1.1em">symbol of masculine strength</span> to hide or show the playlist (and access other functions too). On the background, the page will display an array of super-manly pictures. (On future updates, you will be able to choose a theme for the pictures to be displayed. Keep tuned!)</p>
         <button id="next" onclick="goToMain()">Continue</button>
     </header>
 
@@ -33,7 +33,7 @@
     <!-- ===== FUNCTIONS =====  -->
     <script>
       var slide = 0;
-      var time = 10*1000;
+      var time = 30*1000;
 
       function showBackground(n){
         var bod = document.body;
@@ -71,6 +71,20 @@
           bod.background = "images/c-porsche_carrera.jpg";
         } else if(n == 16) {
           bod.background = "images/c-teslaroadster.jpg";
+        } else if(n == 17) {
+          bod.background = "images/f-alexis_standardcouk.jpg";
+        } else if(n == 18) {
+          bod.background = "images/f-cantona_sport360.jpg";
+        } else if(n == 19) {
+          bod.background = "images/f-cr7_standardcouk.jpg";
+        } else if(n == 20) {
+          bod.background = "images/f-fenomeno_youtube.jpg";
+        } else if(n == 21) {
+          bod.background = "images/f-giggs_wikimedia.jpg";
+        } else if(n == 22) {
+          bod.background = "images/f-messi_youtube.jpg";
+        } else if(n == 23) {
+          bod.background = "images/f-zidane_youtube.jpg";
         } else {
           bod.background = "images/black.jpg";
         }
@@ -78,7 +92,7 @@
       function nextBg(){
         showBackground(slide);
         // console.log(slide);
-        slide = Math.floor(Math.random()*16 +1);
+        slide = Math.floor(Math.random()*23 +1);
       }
       function goToMain(){
         document.getElementById("intro").style.display = 'none';
